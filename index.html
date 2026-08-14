@@ -2,89 +2,219 @@
 <html>
 <head>
     <title>Maadhavi Printers</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
+        * { box-sizing: border-box; }
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
+            background-color: #faf9f7;
+            color: #2b2b2b;
         }
-        header {
-            background-color: #1a1a2e;
+        nav {
+            background-color: #14142b;
+            padding: 18px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        nav .logo {
             color: white;
-            padding: 30px 20px;
+            font-size: 1.4em;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+        }
+        nav a {
+            color: #ddd;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 0.95em;
+        }
+        nav a:hover { color: #d4af37; }
+
+        .hero {
+            background: linear-gradient(135deg, #14142b, #292955);
+            color: white;
             text-align: center;
+            padding: 80px 20px 90px;
         }
-        header h1 {
-            margin: 0;
-            font-size: 2.2em;
+        .hero h1 {
+            font-size: 2.6em;
+            margin-bottom: 10px;
         }
-        header p {
-            margin-top: 8px;
+        .hero p {
             color: #ccc;
+            font-size: 1.15em;
+            max-width: 500px;
+            margin: 0 auto;
         }
+        .hero .tag {
+            display: inline-block;
+            margin-top: 25px;
+            background-color: #d4af37;
+            color: #14142b;
+            padding: 10px 28px;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 0.95em;
+        }
+
         .section {
-            max-width: 700px;
-            margin: 40px auto;
-            padding: 0 20px;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 20px;
         }
         .section h2 {
-            border-bottom: 2px solid #1a1a2e;
-            padding-bottom: 8px;
+            text-align: center;
+            font-size: 1.8em;
+            margin-bottom: 8px;
         }
-        .service-item {
+        .section .subtitle {
+            text-align: center;
+            color: #777;
+            margin-bottom: 40px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+        .card {
             background: white;
-            padding: 15px 20px;
-            margin: 12px 0;
-            border-radius: 6px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            padding: 25px 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            border-top: 3px solid #d4af37;
         }
+        .card h3 {
+            margin-top: 0;
+            font-size: 1.1em;
+            color: #14142b;
+        }
+        .card p {
+            color: #666;
+            font-size: 0.92em;
+            line-height: 1.5;
+        }
+
         .about-box {
             background: white;
-            padding: 20px;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            line-height: 1.7;
+        }
+
+        form {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        form input, form textarea {
+            padding: 12px;
+            border: 1px solid #ddd;
             border-radius: 6px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-            line-height: 1.6;
+            font-family: inherit;
+            font-size: 0.95em;
         }
-        .contact {
-            background-color: #1a1a2e;
+        form button {
+            background-color: #14142b;
             color: white;
+            border: none;
+            padding: 13px;
+            border-radius: 6px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+        form button:hover { background-color: #292955; }
+
+        footer {
+            background-color: #14142b;
+            color: #ccc;
             text-align: center;
-            padding: 25px 20px;
-            margin-top: 40px;
+            padding: 30px 20px;
+            margin-top: 20px;
         }
-        .contact p {
-            margin: 6px 0;
-        }
+        footer p { margin: 5px 0; font-size: 0.9em; }
+        footer .highlight { color: #d4af37; font-weight: bold; }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Maadhavi Printers</h1>
-        <p>Quality Printing & Design Services</p>
-    </header>
 
-    <div class="section">
-        <h2>About Us</h2>
-        <div class="about-box">
-            <p>Maadhavi Printers has been serving the local community with reliable, high-quality printing and design work. From everyday stationery to custom event materials, we handle every order with care and attention to detail.</p>
+    <nav>
+        <div class="logo">Maadhavi Printers</div>
+        <div>
+            <a href="#services">Services</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <h1>Maadhavi Printers</h1>
+        <p>Complete printing, design & branding solutions — done with precision, delivered on time.</p>
+        <div class="tag">Trusted local craftsmanship since day one</div>
+    </div>
+
+    <div class="section" id="services">
+        <h2>Our Services</h2>
+        <p class="subtitle">Everything from everyday printing to premium finishing</p>
+        <div class="grid">
+            <div class="card">
+                <h3>DTP & Design</h3>
+                <p>Professional desktop publishing and custom design work for all your print needs.</p>
+            </div>
+            <div class="card">
+                <h3>Wedding Cards</h3>
+                <p>Elegant, personalized wedding and event invitations in a range of styles.</p>
+            </div>
+            <div class="card">
+                <h3>Garment Printing</h3>
+                <p>Custom t-shirt and apparel printing for events, teams, and businesses.</p>
+            </div>
+            <div class="card">
+                <h3>Branded Merchandise</h3>
+                <p>Custom branded items for businesses — mugs, bags, corporate giveaways, and more.</p>
+            </div>
+            <div class="card">
+                <h3>Gold Foiling</h3>
+                <p>Premium gold foil finishing for invitations, certificates, and luxury print work.</p>
+            </div>
         </div>
     </div>
 
-    <div class="section">
-        <h2>Our Services</h2>
-        <div class="service-item">Visiting Cards & Business Stationery</div>
-        <div class="service-item">Banners & Flex Printing</div>
-        <div class="service-item">Wedding & Event Invitations</div>
-        <div class="service-item">Brochures & Pamphlets</div>
-        <div class="service-item">Custom Design Work</div>
+    <div class="section" id="about">
+        <h2>About Us</h2>
+        <p class="subtitle">Local, reliable, detail-focused</p>
+        <div class="about-box">
+            <p>Maadhavi Printers has been serving the local community with reliable, high-quality printing and design work. From everyday stationery to premium wedding cards and branded merchandise, every order is handled with care and attention to detail — combining traditional craftsmanship with modern finishing techniques like gold foiling.</p>
+        </div>
     </div>
 
-    <div class="contact">
-        <p><strong>Get in Touch</strong></p>
-        <p>Phone: [07019810736]</p>
-        <p>Address: [K.G. ROAD, Uppoor, Santhekatte, Karnataka 576105]</p>
+    <div class="section" id="contact">
+        <h2>Get In Touch</h2>
+        <p class="subtitle">Send us your requirements and we'll get back to you</p>
+        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="tel" name="phone" placeholder="Phone Number" required>
+            <textarea name="message" rows="4" placeholder="What do you need printed?" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
     </div>
+
+    <footer>
+        <p><span class="highlight">Maadhavi Printers</span></p>
+        <p>Phone: 07019810736 | Address: K.G. ROAD, Uppoor, Santhekatte, Karnataka 576105</p>
+    </footer>
+
 </body>
 </html>
