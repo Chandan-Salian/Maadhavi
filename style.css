@@ -254,3 +254,72 @@ form button:active { transform: scale(0.97); }
     font-size: 0.9em;
     color: #555;
 }
+
+
+
+:root {
+    --bg: #faf9f7;
+    --text: #2b2b2b;
+    --card-bg: #ffffff;
+    --nav-bg: #14142b;
+    --accent: #d4af37;
+}
+body.dark {
+    --bg: #14141f;
+    --text: #e8e6e0;
+    --card-bg: #1e1e2e;
+    --nav-bg: #0a0a14;
+}
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+nav { background-color: var(--nav-bg); }
+.card, .about-box, form, .gallery-item {
+    background-color: var(--card-bg);
+    color: var(--text);
+}
+footer { background-color: var(--nav-bg); }
+
+.theme-toggle {
+    background: none;
+    border: 2px solid #666;
+    color: inherit;
+    border-radius: 20px;
+    padding: 5px 12px;
+    cursor: pointer;
+    font-size: 0.85em;
+    margin-left: 15px;
+}
+.theme-toggle:hover { border-color: var(--accent); }
+
+#preloader {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: var(--bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+#preloader.hidden { opacity: 0; visibility: hidden; }
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #ddd;
+    border-top: 5px solid var(--accent);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.map-container iframe {
+    width: 100%;
+    height: 300px;
+    border: 0;
+    border-radius: 10px;
+    margin-top: 30px;
+}
