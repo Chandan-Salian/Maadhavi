@@ -151,6 +151,12 @@ nav a:hover { color: var(--accent); }
 .card:hover { transform: translateY(-6px) scale(1.02); box-shadow: 0 8px 20px rgba(0,0,0,0.18); }
 .card h3 { margin-top: 0; font-size: 1.1em; }
 .card p { color: #888; font-size: 0.92em; line-height: 1.5; }
+.card i {
+    font-size: 1.8em;
+    color: var(--accent);
+    margin-bottom: 10px;
+    display: block;
+}
 
 .about-box {
     background: var(--card-bg);
